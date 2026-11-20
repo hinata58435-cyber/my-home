@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-ivory text-dark font-sans antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  h1, h2, h3, h4 {
+    @apply font-display font-bold tracking-tight;
+  }
+  ::selection {
+    @apply bg-sage-300/60 text-dark;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-bold transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-sage-400 focus-visible:ring-offset-2 focus-visible:ring-offset-ivory disabled:opacity-50 disabled:pointer-events-none;
+  }
+  .btn-primary {
+    @apply btn bg-sage-400 text-white shadow-soft hover:bg-sage-500 hover:shadow-card hover:-translate-y-0.5 active:translate-y-0;
+  }
+  .btn-outline {
+    @apply btn border border-sage-300 text-dark hover:bg-sage-50 hover:border-sage-400;
+  }
+  .btn-wood {
+    @apply btn bg-wood text-white shadow-soft hover:bg-wood-dark hover:-translate-y-0.5;
+  }
+  .container-x {
+    @apply mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-12;
+  }
+  .section-title {
+    @apply font-display text-3xl sm:text-4xl font-bold text-dark;
+  }
+  .eyebrow {
+    @apply inline-flex items-center gap-2 text-sm font-bold tracking-wide text-sage-500;
+  }
+  .card {
+    @apply rounded-3xl bg-white shadow-soft transition-all duration-300;
+  }
+  .input-field {
+    @apply w-full rounded-2xl border border-beige-200 bg-white px-4 py-3 text-dark placeholder:text-dark/40 transition-all focus:border-sage-400 focus:outline-none focus:ring-2 focus:ring-sage-200;
+  }
+  .chip {
+    @apply inline-flex items-center gap-1.5 rounded-full px-4 py-2 text-sm font-bold transition-all;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: beige-100; }
+::-webkit-scrollbar-thumb { background: #a3bba6; border-radius: 9999px; }
+::-webkit-scrollbar-thumb:hover { background: #829582; }
+
+/* Hide scrollbar utility */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
